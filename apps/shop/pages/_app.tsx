@@ -6,7 +6,7 @@ import './styles.css';
 import { Header } from '@happyorg/components'
 import { currentDate } from '@happyorg/utils'
 
-// some change1
+// some change2
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>

@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  pull_request:
+
+env:
+  NX_BRANCH: ${{ github.event.number || github.ref }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+      - run: npm install
+      - run: npx nx affected --base=origin/main --target=build --parallel --max-parallel=3
+      - run: npx nx affected --base=origin/main --target=test --parallel --max-parallel=2
+      - run: npx nx affected --base=origin/main --target=lint --parallel --max-parallel=2
+      - run: npx nx affected --base=origin/main --target=e2e --parallel --max-parallel=2
