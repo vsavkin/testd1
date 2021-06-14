@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@happyorg/components": ["libs/components/src/index.ts"],
+      "@happyorg/utils": ["libs/utils/src/index.ts"],
+      "@happyorg/feature-about": ["libs/feature-about/src/index.ts"],
+      "@happyorg/workspace-extension": ["libs/workspace-extension/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
