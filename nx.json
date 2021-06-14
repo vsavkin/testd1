@@ -21,6 +21,14 @@
       }
     }
   },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
   "projects": {
     "shop": {
       "tags": []
@@ -33,7 +41,7 @@
       "tags": []
     },
     "utils": {
-      "tags": []
+      "tags": ["some tag"]
     },
     "feature-about": {
       "tags": []

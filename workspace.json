@@ -276,7 +276,7 @@
       "prefix": "happyorg",
       "targets": {
         "build": {
-          "executor": "@angular-devkit/build-angular:browser",
+        "executor": "@angular-devkit/build-angular:browser",
           "outputs": [
             "{options.outputPath}"
           ],
